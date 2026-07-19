@@ -1,25 +1,12 @@
-# *****************************************************************************************************
-# Program: main.py
-# Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
-# Class: TL9L
-# Year: 2023/24 Trimester 1
-# Names: CHIAM HUAI REN | CHAN JIA HUI | LEONG WING YAN
-# IDs: 1221108202 | 1221106978 | 1221109537
-# Emails: 1221108202@student.mmu.edu.my | 1221106978@student.mmu.edu.my | 1221109537@student.mmu.edu.my
-# Phones: 0174024804 | 01156788803 | 01110808482
-# *****************************************************************************************************
 
-
-#Leong Wing Yan
 import pygame
 import subprocess
 
 pygame.font.init()
 
-# Chan Jia Hui
+
 pygame.mixer.init()
 
-# Leong Wing Yan
 WIDHT, HEIGHT = 1000, 650
 WIN = pygame.display.set_mode((WIDHT, HEIGHT))
 pygame.display.set_caption("Find the Aircraft")
