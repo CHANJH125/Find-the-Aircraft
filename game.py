@@ -1,24 +1,21 @@
-#Leong Wing Yan
 import pygame
 import random
 import subprocess
 
 pygame.font.init()
 
-# Chan Jia Hui
 pygame.mixer.init()
 
-# Leong Wing Yan
+
 WIDTH, HEIGHT = 1000, 650
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Good Luck & Have Fun! ")
 
 BG = pygame.transform.scale(pygame.image.load("spbg.jpg"),(WIDTH, HEIGHT))
 text_font = pygame.font.SysFont("comicsans",17)
-#Chan Jia Hui
 score_font = pygame.font.SysFont("comicsans",50)
 
-#Chiam Huai Ren
+
 clicked_block = []
 bottom_block = []
 block_empty = 0
@@ -28,11 +25,9 @@ head_up = 3
 head_down = 4
 head_left = 5
 head_right = 6
-
-#Chan Jia Hui
 aircraft_heads = []
 
-#Leong Wing Yan and Chiam Huai Ren
+
 WHITE = (255,255,255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
@@ -42,7 +37,7 @@ SQUARE_SIZE_DISPLAY = 25
 GAP_SIZE = 3
 OFFSET_X, OFFSET_Y = 15, 40
 
-#Chiam Huai Ren
+
 size = 12
 
 #Initialise the 12*12 block row by row every time the game starts
@@ -282,7 +277,6 @@ def create_aircraft_1(size):
     if head_direction == head_up:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j - 2] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j - 2))
         bottom_block[centre_i][centre_j + 1] = aircraft_body
         bottom_block[centre_i][centre_j - 1] = aircraft_body
@@ -292,7 +286,6 @@ def create_aircraft_1(size):
     elif head_direction == head_down:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j + 2] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j + 2))
         bottom_block[centre_i][centre_j + 1] = aircraft_body
         bottom_block[centre_i][centre_j - 1] = aircraft_body
@@ -302,7 +295,6 @@ def create_aircraft_1(size):
     elif head_direction == head_left:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i - 2][centre_j] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i - 2, centre_j))
         bottom_block[centre_i][centre_j + 1] = aircraft_body
         bottom_block[centre_i][centre_j - 1] = aircraft_body
@@ -312,7 +304,6 @@ def create_aircraft_1(size):
     elif head_direction == head_right:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i + 2][centre_j] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i + 2, centre_j))
         bottom_block[centre_i][centre_j + 1] = aircraft_body
         bottom_block[centre_i][centre_j - 1] = aircraft_body
@@ -337,7 +328,6 @@ def create_aircraft_2(size):
     if head_direction == head_up:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j - 2] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j - 2))
         bottom_block[centre_i - 1][centre_j + 1] = aircraft_body
         bottom_block[centre_i + 1][centre_j + 1] = aircraft_body
@@ -348,7 +338,6 @@ def create_aircraft_2(size):
     elif head_direction == head_down:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j + 2] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j + 2))
         bottom_block[centre_i][centre_j + 1] = aircraft_body
         bottom_block[centre_i - 1][centre_j + 1] = aircraft_body
@@ -359,7 +348,6 @@ def create_aircraft_2(size):
     elif head_direction == head_left:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i - 2][centre_j] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i - 2, centre_j))
         bottom_block[centre_i - 1][centre_j + 1] = aircraft_body
         bottom_block[centre_i + 1][centre_j + 1] = aircraft_body
@@ -370,7 +358,6 @@ def create_aircraft_2(size):
     elif head_direction == head_right:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i + 2][centre_j] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i + 2, centre_j))
         bottom_block[centre_i - 1][centre_j + 1] = aircraft_body
         bottom_block[centre_i + 1][centre_j + 1] = aircraft_body
@@ -396,7 +383,6 @@ def create_aircraft_3(size):
     if head_direction == head_up:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j - 1] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j - 1))
         bottom_block[centre_i - 1][centre_j] = aircraft_body
         bottom_block[centre_i - 2][centre_j] = aircraft_body
@@ -410,7 +396,6 @@ def create_aircraft_3(size):
     elif head_direction == head_down:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i][centre_j + 1] = aircraft_head
-        #Chan Jia Hui
         aircraft_heads.append((centre_i, centre_j + 1))
         bottom_block[centre_i - 1][centre_j] = aircraft_body
         bottom_block[centre_i - 2][centre_j] = aircraft_body
@@ -424,7 +409,7 @@ def create_aircraft_3(size):
     elif head_direction == head_left:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i - 1][centre_j] = aircraft_head
-        #Chan Jia Hui
+        
         aircraft_heads.append((centre_i - 1, centre_j))
         bottom_block[centre_i][centre_j - 1] = aircraft_body
         bottom_block[centre_i][centre_j - 2] = aircraft_body
@@ -438,7 +423,7 @@ def create_aircraft_3(size):
     elif head_direction == head_right:
         bottom_block[centre_i][centre_j] = aircraft_body
         bottom_block[centre_i + 1][centre_j] = aircraft_head
-        #Chan Jia Hui
+        
         aircraft_heads.append((centre_i + 1, centre_j))
         bottom_block[centre_i][centre_j - 1] = aircraft_body
         bottom_block[centre_i][centre_j - 2] = aircraft_body
@@ -468,7 +453,7 @@ def block(size):
             # pygame.draw.rect(screen, (255, 0, 0), (200, 100, 150, 150))
             pygame.draw.rect(WIN, color, (rect_x, rect_y, SQUARE_SIZE, SQUARE_SIZE))
 
-#Leong Wing Yan
+ 
 def draw_square_red_display(x, y):
     pygame.draw.rect(WIN, RED,(x, y, SQUARE_SIZE_DISPLAY, SQUARE_SIZE_DISPLAY))
 
@@ -508,8 +493,6 @@ def draw_text(text, font, text_col, x, y):
     draw_square_blue_display(651, 391)
     draw_square_blue_display(651, 418)
     draw_square_blue_display(651, 364)
-
-#Chiam Huai Ren
 def game_start():
     whole_block(size)
     #set a maximum running time to close the while loop(Python not responding)
@@ -543,7 +526,7 @@ def game_start():
 
     block(size)
 
-#Chan Jia Hui
+
 airplane_heads_clicked = 0
 CurrentScore = 0
 HighScore = 0
@@ -554,9 +537,8 @@ with open("name.txt", "r") as f:
         user, score = line.strip().split()
         HighScore = int(score)
 
-#Chiam Huai ren
 def block_event(event, SQUARE_SIZE, GAP_SIZE, OFFSET_X, OFFSET_Y, size):
-    #Chan Jia Hui
+    
     global airplane_heads_clicked, CurrentScore
 
 #https://www.tutorialspoint.com/pygame/pygame_mouse_events.htm
@@ -572,14 +554,12 @@ def block_event(event, SQUARE_SIZE, GAP_SIZE, OFFSET_X, OFFSET_Y, size):
         #make sure is in the range of white block and havent clicked
         if 0 <= i < size and 0 <= j < size and not clicked_block[i][j]:
             clicked_block[i][j] = True
-            #Chan Jia Hui
             sound_effect = pygame.mixer.Sound("gamese.mp3")
             sound_effect.play()
             sound_effect.set_volume(0.2)
             CurrentScore += 1
             block(size)
 
-            #Chan Jia Hui
             if (i, j) in aircraft_heads:
                 airplane_heads_clicked += 1
 
@@ -604,16 +584,15 @@ def block_event(event, SQUARE_SIZE, GAP_SIZE, OFFSET_X, OFFSET_Y, size):
                     subprocess.run(["python", "win.py"]) 
 
 
-#Leong Wing Yan
+ 
 run = True
 game_start()
 
-#Chan Jia Hui
 pygame.mixer_music.load("gamebgm.mp3")
 pygame.mixer_music.play(-1)
 pygame.mixer.music.set_volume(0.5)
 
-#Leong Wing Yan
+ 
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -626,7 +605,6 @@ while run:
     pygame.draw.rect(WIN,(51,103,152),(622.5,498,155,35),border_radius =50)
     draw_text("Find the Aircraft", text_font,(255,255,153),630,503)
 
-    #Chan Jia Hui
     pygame.draw.rect(WIN,(51,153,204),(810,50,180,100),border_radius =50)
     draw_text("HighScore", text_font,(255,255,153),855,60)
     draw_text(str(HighScore), score_font,(00,00,255),870,80)
