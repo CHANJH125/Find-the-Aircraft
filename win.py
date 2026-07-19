@@ -1,4 +1,4 @@
-# Chan Jia Hui
+
 
 import pygame
 import sys
