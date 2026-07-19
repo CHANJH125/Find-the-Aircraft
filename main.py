@@ -59,7 +59,6 @@ class Button():
             if pygame.mouse.get_pressed()[0] == 1 and not self.clicked :
                 self.clicked = True
                 action = True
-                # Chan Jia Hui
                 sound_effect = pygame.mixer.Sound("mainse.mp3")
                 sound_effect.play()
                 sound_effect.set_volume(0.5)
