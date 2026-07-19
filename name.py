@@ -1,14 +1,14 @@
-# Leong Wing Yan
+
 import pygame
 import sys
 import subprocess
 
 pygame.font.init()
 
-# Chan Jia Hui
+
 pygame.mixer.init()
 
-# Leong Wing Yan
+
 WIDTH, HEIGHT = 1000, 650
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Player's name ")
@@ -43,7 +43,7 @@ def draw_text(text, font, text_col, x, y):
 
 
 def start_game():
-    # Chan Jia Hui
+    
     global user_text
     if user_text.strip():
         with open("name.txt", "r+", encoding="utf-8") as f:
@@ -69,17 +69,17 @@ def start_game():
             f.truncate()
             f.writelines(lines)
 
-        # Leong Wing Yan
+        
         subprocess.run(["python", "game.py"])
 
 
 run = True
 
-# Chan Jia Hui
+
 sound_effect = pygame.mixer.Sound("namese.mp3")
 sound_effect.play()
 
-# Leong Wing Yan
+
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
